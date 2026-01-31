@@ -5,9 +5,9 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches:
-      - main
+  #push:
+  #  branches:
+  #    - main
   # Allow manual trigger
   workflow_dispatch:
 
