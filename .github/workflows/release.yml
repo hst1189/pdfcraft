@@ -5,14 +5,16 @@
 name: Build and Release
 
 on:
-  push:
-    branches:
-      - main
+  #push:
+  #  branches:
+  #    - main
     # Optional: Only trigger on specific file changes
     # paths:
     #   - 'src/**'
     #   - 'public/**'
     #   - 'package.json'
+  # Allow manual trigger
+  workflow_dispatch:  
 
 # Prevent concurrent builds
 concurrency:
