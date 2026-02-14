@@ -2084,6 +2084,35 @@ export const toolContentEn: Record<string, ToolContent> = {
     ],
   },
 
+  'find-and-redact': {
+    title: 'Find and Redact',
+    metaDescription: 'Search and redact text across all pages of a PDF. Batch redact sensitive information like account numbers, names, and more.',
+    keywords: ['redact pdf', 'find and redact', 'batch redact', 'remove text', 'pdf censorship', 'hide sensitive data'],
+    description: `
+      <p>Find and Redact allows you to search for specific text, numbers, or patterns across all pages of your PDF and redact all matching occurrences at once. Perfect for removing sensitive information like account numbers, names, addresses, or any confidential data.</p>
+      <p>Preview all matches before applying redactions, and selectively choose which occurrences to redact. Supports case-sensitive search, whole word matching, and regular expressions for advanced pattern matching.</p>
+      <p>All processing happens in your browser, ensuring your documents remain private and secure.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Upload Your PDF', description: 'Drag and drop your PDF file or click to select.' },
+      { step: 2, title: 'Search for Text', description: 'Enter the text, number, or regex pattern you want to find and redact.' },
+      { step: 3, title: 'Review and Select', description: 'Preview all matches and select which ones to redact.' },
+      { step: 4, title: 'Apply Redaction', description: 'Customize redaction appearance and apply to selected matches.' },
+    ],
+    useCases: [
+      { title: 'Privacy Compliance', description: 'Redact personal information to comply with GDPR, HIPAA, or other regulations.', icon: 'shield' },
+      { title: 'Legal Documents', description: 'Remove confidential data from legal documents before sharing.', icon: 'scale' },
+      { title: 'Financial Records', description: 'Redact account numbers, SSNs, or financial data from statements.', icon: 'credit-card' },
+    ],
+    faq: [
+      { question: 'Is redaction permanent?', answer: 'Yes, redaction permanently removes the underlying text. The original content cannot be recovered. Always keep a backup of the original file.' },
+      { question: 'Can I redact images or scanned text?', answer: 'This tool works with text-based PDFs. For scanned documents, you would need to use manual area-based redaction.' },
+      { question: 'Can I customize the redaction appearance?', answer: 'Yes, you can set the redaction color, add borders, and optionally include replacement text like "[REDACTED]".' },
+      { question: 'How does regex search work?', answer: 'Enable "Use Regular Expression" to search using regex patterns. For example, \\d{4}-\\d{4}-\\d{4}-\\d{4} to find credit card numbers.' },
+    ],
+  },
+
+
   'decrypt-pdf': {
     title: 'Decrypt PDF',
     metaDescription: 'Remove password from PDF files. Unlock password-protected documents.',
@@ -2211,6 +2240,32 @@ export const toolContentEn: Record<string, ToolContent> = {
       { question: 'Is formatting preserved?', answer: 'Yes, the tool aims to preserve layout, fonts, and images as closely as possible.' },
       { question: 'Can I convert scanned PDFs?', answer: 'Scanned PDFs will be converted as images in Word unless you use OCR first.' },
       { question: 'Is it compatible with Word?', answer: 'Yes, the output is a standard .docx file compatible with Microsoft Word and Google Docs.' },
+    ],
+  },
+
+  'pdf-to-markdown': {
+    title: 'PDF to Markdown',
+    metaDescription: 'Convert PDF to Markdown format. Extract text and preserve formatting like headings and lists.',
+    keywords: ['pdf to markdown', 'convert pdf to md', 'pdf text extraction', 'markdown converter', 'pdf to text'],
+    description: `
+      <p>PDF to Markdown converts your PDF documents into clean, well-structured Markdown files. The tool intelligently extracts text content and attempts to preserve formatting like headings, lists, and paragraphs.</p>
+      <p>Perfect for converting PDF documents to editable formats for documentation, note-taking, or content management systems that support Markdown.</p>
+      <p>All conversion happens locally in your browser, ensuring your documents remain private and secure.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Upload Your PDF', description: 'Drag and drop your PDF file or click to select.' },
+      { step: 2, title: 'Configure Options', description: 'Set page range, choose to include page numbers, and adjust line break settings.' },
+      { step: 3, title: 'Convert and Download', description: 'Click Convert to generate your Markdown file and download.' },
+    ],
+    useCases: [
+      { title: 'Documentation', description: 'Convert PDF manuals and guides to Markdown for version-controlled documentation.', icon: 'file-text' },
+      { title: 'Note Taking', description: 'Extract content from PDF articles and books for your note-taking system.', icon: 'edit-3' },
+      { title: 'Content Migration', description: 'Migrate PDF content to CMS platforms that support Markdown.', icon: 'copy' },
+    ],
+    faq: [
+      { question: 'Is formatting preserved?', answer: 'The tool attempts to detect headings based on font size and bullet points/numbered lists. Complex layouts may require manual adjustment.' },
+      { question: 'Can I convert specific pages?', answer: 'Yes, you can specify a page range like "1-3, 5, 7" to convert only those pages.' },
+      { question: 'Does it work with scanned PDFs?', answer: 'Scanned PDFs contain images, not text. Use our OCR tool first to extract text before converting to Markdown.' },
     ],
   },
 
@@ -2507,6 +2562,60 @@ export const toolContentEn: Record<string, ToolContent> = {
       { question: 'Is my document secure?', answer: 'Yes, your document is processed entirely in your browser and is never uploaded to any server.' },
       { question: 'Can I annotate or edit the PDF?', answer: 'This tool is for viewing only. Use our Sign PDF or Annotate PDF tools for editing.' },
       { question: 'Does it work on mobile devices?', answer: 'Yes, the PDF Reader works on all devices with a modern web browser.' },
+    ],
+  },
+
+  'digital-sign-pdf': {
+    title: 'Digital Signature',
+    metaDescription: 'Add X.509 digital signatures to PDF documents. Sign PDFs with PFX, P12, or PEM certificates for legal validity.',
+    keywords: ['digital signature pdf', 'x509 certificate', 'pfx sign pdf', 'p12 sign pdf', 'pem sign pdf', 'legally sign pdf'],
+    description: `
+      <p>Digital Signature allows you to add cryptographic X.509 digital signatures to PDF documents. Unlike simple drawn signatures, digital signatures provide legal validity and document integrity verification.</p>
+      <p>Upload your certificate file (PFX, P12, or PEM format), enter the password, and sign your PDF. You can add visible signatures with custom text, images, and positioning, or invisible signatures for document integrity only.</p>
+      <p>All signing happens locally in your browser. Your certificate and documents are never uploaded to any server.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Upload PDF', description: 'Upload the PDF document you want to digitally sign.' },
+      { step: 2, title: 'Load Certificate', description: 'Upload your X.509 certificate file (.pfx, .p12, or .pem) and enter the password.' },
+      { step: 3, title: 'Configure Signature', description: 'Optionally add reason, location, and visible signature with custom text or image.' },
+      { step: 4, title: 'Sign and Download', description: 'Click Sign PDF to apply the digital signature and download the signed document.' },
+    ],
+    useCases: [
+      { title: 'Legal Documents', description: 'Sign contracts, agreements, and legal documents with legally binding digital signatures.', icon: 'scale' },
+      { title: 'Business Approvals', description: 'Digitally sign invoices, purchase orders, and approval documents for audit trails.', icon: 'briefcase' },
+      { title: 'Document Integrity', description: 'Ensure documents have not been tampered with after signing.', icon: 'shield-check' },
+    ],
+    faq: [
+      { question: 'What certificate formats are supported?', answer: 'PFX (.pfx), PKCS#12 (.p12), and PEM (.pem) certificate formats are supported.' },
+      { question: 'Is the signature legally valid?', answer: 'Yes, X.509 digital signatures are legally recognized in most jurisdictions when using a valid certificate.' },
+      { question: 'Can I add a visible signature?', answer: 'Yes, you can add a visible signature with custom text, image, position, and styling.' },
+    ],
+  },
+
+  'validate-signature': {
+    title: 'Validate Signature',
+    metaDescription: 'Verify digital signatures in PDF documents. Check certificate validity, signer information, and document integrity.',
+    keywords: ['validate pdf signature', 'verify digital signature', 'check pdf certificate', 'signature verification'],
+    description: `
+      <p>Validate Signature allows you to verify digital signatures in PDF documents. Check if signatures are valid, view certificate information, and confirm document integrity.</p>
+      <p>Upload a signed PDF to see all signatures, their validity status, signer information, and whether the document has been modified after signing.</p>
+      <p>All validation happens locally in your browser. Your documents are never uploaded to any server.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Upload Signed PDF', description: 'Upload a PDF document that contains digital signatures.' },
+      { step: 2, title: 'View Results', description: 'See all signatures found in the document with their validity status.' },
+      { step: 3, title: 'Check Details', description: 'View certificate information, signer details, and signing timestamp.' },
+      { step: 4, title: 'Export Report', description: 'Optionally download a JSON report of the validation results.' },
+    ],
+    useCases: [
+      { title: 'Document Verification', description: 'Verify that signed documents are authentic and have not been tampered with.', icon: 'shield-check' },
+      { title: 'Compliance Audit', description: 'Check signature validity for compliance and audit purposes.', icon: 'clipboard-check' },
+      { title: 'Certificate Review', description: 'View certificate details and expiration dates for signed documents.', icon: 'award' },
+    ],
+    faq: [
+      { question: 'What does "valid" mean?', answer: 'A valid signature means the document has not been modified since signing and the certificate chain is intact.' },
+      { question: 'Can I validate multiple PDFs?', answer: 'Yes, you can upload multiple PDFs and validate all signatures in batch.' },
+      { question: 'Why might a signature be invalid?', answer: 'Signatures may be invalid if the document was modified, the certificate expired, or the certificate is not trusted.' },
     ],
   },
 };
